@@ -1,0 +1,4 @@
+{
+  "fakesight.config.requestDistance": "Request Distance",
+  "fakesight.config.requestDistance.tooltip": "The distance request from server"
+}

@@ -4,6 +4,8 @@
   "package": "com.moepus.fakesight.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MixinShaderLoader",
+    "VoxyConfigScreenPagesMixin"
   ],
   "client": [
     "IntegratedServerMixin",
