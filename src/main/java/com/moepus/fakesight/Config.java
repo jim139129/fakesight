@@ -3,7 +3,8 @@ package com.moepus.fakesight;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import me.cortex.voxy.common.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import net.caffeinemc.mods.sodium.client.gui.options.storage.OptionStorage;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -19,6 +20,8 @@ public class Config implements OptionStorage<Config> {
             .setPrettyPrinting()
             .excludeFieldsWithModifiers(Modifier.PRIVATE)
             .create();
+    
+    private static final Logger LOGGER = LogManager.getLogger("FakeSight");
 
     public int requestDistance = 48;
 
@@ -32,7 +35,7 @@ public class Config implements OptionStorage<Config> {
         try {
             Files.writeString(getConfigPath(), GSON.toJson(this));
         } catch (IOException e) {
-            Logger.error("Failed to write config file", e);
+            LOGGER.error("Failed to write config file", e);
         }
     }
 
@@ -51,10 +54,10 @@ public class Config implements OptionStorage<Config> {
                     conf.save();
                     return conf;
                 } else {
-                    Logger.error("Failed to load fake-sight config, resetting");
+                    LOGGER.error("Failed to load fake-sight config, resetting");
                 }
             } catch (IOException e) {
-                Logger.error("Could not parse config", e);
+                LOGGER.error("Could not parse config", e);
             }
         }
         var config = new Config();
