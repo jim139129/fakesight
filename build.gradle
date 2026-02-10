@@ -33,8 +33,8 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation ("maven.modrinth:sodium:WyNhe8oi") // 0.8.4 for 1.21.11
-    modImplementation ("maven.modrinth:voxy:Jzrn6wvz") // 0.2.10 for 1.21.11
+    modImplementation ("maven.modrinth:sodium:mc-latest-nightly") // Latest Sodium for 1.21.11
+    modImplementation ("maven.modrinth:voxy:0.2.10") // 0.2.10 for 1.21.11
 }
 
 processResources {
